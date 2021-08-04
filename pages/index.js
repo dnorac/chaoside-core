@@ -69,8 +69,9 @@ export default function Home({ apiUrl }) {
   );
 }
 
-export const getStaticProps = () => ({
-  props: {
-    apiUrl: process.env.NEXT_PUBLIC_API_URL,
-  },
-});
+export const getStaticProps = async () =>
+  Promise.resolve({
+    props: {
+      apiUrl: process.env.NEXT_PUBLIC_API_URL,
+    },
+  });
